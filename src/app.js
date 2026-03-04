@@ -1,10 +1,19 @@
 const express = require("express");
+const { openApiSpec, swaggerHtml } = require("./docs/openapi");
 const parkingRoutes = require("./routes/parkingRoutes");
 const { AppError } = require("./domain/errors/AppError");
 
 const app = express();
 
 app.use(express.json());
+
+app.get("/docs/openapi.json", (req, res) => {
+  res.status(200).json(openApiSpec);
+});
+
+app.get("/docs", (req, res) => {
+  res.type("html").send(swaggerHtml);
+});
 
 app.use("/parking", parkingRoutes);
 
