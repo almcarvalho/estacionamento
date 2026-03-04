@@ -1,0 +1,13 @@
+{
+  "name": "estacionamento-shopping",
+  "version": "1.0.0",
+  "description": "API REST de estacionamento em memoria",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
